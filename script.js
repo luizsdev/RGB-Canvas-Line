@@ -1,7 +1,8 @@
   let canvas = document.getElementById("cnv");
 
   let ctx = canvas.getContext("2d");
-  let ctx2 = canvas.getContext("2d")
+  let ctx2 = canvas.getContext("3d")
+  const colors = ['blue','red','orange','pink','yellow','green','purple','cyan','teal','gray']
   let num;
 
         ctx.moveTo(0,0);
@@ -9,40 +10,29 @@
         let y = 0;
         ctx.strokeStyle = "white";
 
-        function linha(){  
+        function linha(){
             ctx.lineTo(x,y);
             ctx.stroke();
-            x += 2;
-            y += 2;
+            x += Math.floor(Math.random() * 10);
+            y += Math.floor(Math.random() * 10);
         }
 
         setInterval(function(){
                 if(x <= 10000){
                      linha();
                 }
-        },20)
+        },25)
 
-        setInterval(function(){          
-                  num = Math.ceil(Math.random() * 3)
-    },20)
-
+    console.log(Math.floor(Math.random() * 10)      )
     setInterval(function(){
-        if(num == 1){
-             ctx.strokeStyle = "blue";
-        }
-       else if (num == 2){
-            ctx.strokeStyle = "red";
-        }
-        else if (num == 3){
-            ctx.strokeStyle = "green";
-        }
-},5)
-        
-
-        
-      
-        
-    
+            const oneToTenRandom = Math.floor(Math.random() * 10)
+        ctx.strokeStyle = colors[oneToTenRandom]
+},2)
 
 
-            
+
+
+
+
+
+
